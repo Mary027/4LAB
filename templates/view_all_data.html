@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Все данные</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .back-button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Все данные</h1>
+    <table>
+        <tr>
+            <th>Название</th>
+            <th>Дата</th>
+            <th>Расположение</th>
+            <th>Описание</th>
+        </tr>
+        {% for data in all_data %}
+        <tr>
+            <td>{{ data.name }}</td>
+            <td>{{ data.date }}</td>
+            <td>{{ data.location }}</td>
+            <td>{{ data.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'index' %}" class="back-button">Вернуться назад</a>
+</body>
+</html>
